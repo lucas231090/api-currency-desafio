@@ -13,8 +13,6 @@ API RESTful desenvolvida em Node.js com Express e MySQL, para gerenciamento de m
 
 ## Estrutura do Projeto
 
-desafio-giro/
-
 ├── src/
 
 │ ├── controllers/
