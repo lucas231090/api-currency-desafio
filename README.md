@@ -15,11 +15,17 @@ API RESTful desenvolvida em Node.js com Express e MySQL, para gerenciamento de m
 
 desafio-giro/
 ├── src/
+
 │ ├── controllers/
+
 │ ├── services/
+
 │ ├── repositories/
+
 │ ├── routes/
+
 │ └── index.js
+
 └── package.json
 
 ## Instalação e Configuração
