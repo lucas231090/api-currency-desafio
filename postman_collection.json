@@ -1,0 +1,170 @@
+{
+  "info": {
+    "name": "Desafio Giro API",
+    "_postman_id": "12345678-abcd-efgh-ijkl-1234567890ab",
+    "description": "Collection para testar todos os endpoints do desafio, alinhado com store/update/delete",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Root Test",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": [""]
+        }
+      }
+    },
+    {
+      "name": "Create Currency (store)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\":\"Dólar Americano\",\"type\":\"USD\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/currencies",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["currencies"]
+        }
+      }
+    },
+    {
+      "name": "List Currencies (index)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/currencies",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["currencies"]
+        }
+      }
+    },
+    {
+      "name": "Create Exchange Rate (store)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"date\":\"2025-02-01\",\"daily_variation\":0.5,\"daily_rate\":5.25,\"currency_id\":1}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/exchange-rates",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["exchange-rates"]
+        }
+      }
+    },
+    {
+      "name": "List Recent Exchange Rates (indexRecent)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/exchange-rates/recent",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["exchange-rates", "recent"]
+        }
+      }
+    },
+    {
+      "name": "Update Exchange Rate (update)",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"daily_variation\":0.8,\"daily_rate\":5.30,\"currency_id\":1}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/exchange-rates/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["exchange-rates", "1"]
+        }
+      }
+    },
+    {
+      "name": "Delete Old Exchange Rates (deleteOld)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/exchange-rates/old",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["exchange-rates", "old"]
+        }
+      }
+    },
+    {
+      "name": "Create Investor (store)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\":\"João Silva\",\"email\":\"joao@email.com\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/investors",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["investors"]
+        }
+      }
+    },
+    {
+      "name": "Delete Investor (delete)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/investors/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["investors", "1"]
+        }
+      }
+    },
+    {
+      "name": "Create Investment (store)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"initial_amount\":10000,\"months\":12,\"interest_rate\":5.5,\"final_amount\":10550,\"currency_id\":1,\"investor_id\":1}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/investments",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["investments"]
+        }
+      }
+    }
+  ]
+}

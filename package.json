@@ -1,0 +1,23 @@
+{
+  "name": "desafio-giro",
+  "version": "1.0.0",
+  "description": "API REST para gerenciamento de moedas, taxas de câmbio e investimentos",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "echo \"No tests defined yet\" && exit 0"
+  },
+  "author": "Lucas",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mysql2": "^3.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

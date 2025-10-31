@@ -1,0 +1,78 @@
+@baseUrl = http://localhost:3000
+@json = application/json
+
+###
+GET {{baseUrl}}/
+
+###
+POST {{baseUrl}}/currencies
+Content-Type: {{json}}
+
+{
+  "name": "Dólar Americano",
+  "type": "USD"
+}
+
+###
+GET {{baseUrl}}/currencies
+
+###
+POST {{baseUrl}}/exchange-rates
+Content-Type: {{json}}
+
+{
+  "date": "2025-02-01",
+  "daily_variation": 0.5,
+  "daily_rate": 5.25,
+  "currency_id": 1
+}
+
+###
+GET {{baseUrl}}/exchange-rates/recent
+
+###
+PUT {{baseUrl}}/exchange-rates/1
+Content-Type: {{json}}
+
+{
+  "daily_variation": 0.8,
+  "daily_rate": 5.30,
+  "currency_id": 1
+}
+
+###
+DELETE {{baseUrl}}/exchange-rates/old
+
+###
+POST {{baseUrl}}/investors
+Content-Type: {{json}}
+
+{
+  "name": "João Silva",
+  "email": "joao@email.com"
+}
+
+###
+POST {{baseUrl}}/investors
+Content-Type: {{json}}
+
+{
+  "name": "João Silva 2",
+  "email": "joao@email.com"
+}
+
+###
+DELETE {{baseUrl}}/investor/1
+
+###
+POST {{baseUrl}}/investments
+Content-Type: {{json}}
+
+{
+  "initial_amount": 10000,
+  "months": 12,
+  "interest_rate": 5.5,
+  "final_amount": 10550,
+  "currency_id": 1,
+  "investor_id": 1
+}
